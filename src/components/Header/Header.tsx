@@ -5,13 +5,13 @@ export const Header = () => {
             <nav>
                 <ul>
                     <li>
-                        <a href="#home">PROJECTS</a>
+                        <a href="#projects">PROJECTS</a>
                     </li>
                     <li>
-                        <a href="#about"><img src='/minimalLogoWhite.svg' className={styles.logo}></img></a>
+                        <a href="#home"><img src='/minimalLogoWhite.svg' className={styles.logo}></img></a>
                     </li>
                     <li>
-                        <a href="#projects">CONTACTS</a>
+                        <a href="#contacts">CONTACTS</a>
                     </li>
                 </ul>
             </nav>

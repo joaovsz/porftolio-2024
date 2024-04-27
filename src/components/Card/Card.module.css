@@ -1,40 +1,48 @@
-.card{
-    min-width: 600px;
-    max-width: 814px;
-    width: 714px;
-    min-height: 240px;
-    border-radius: .2rem;
-    background: rgba(0, 0, 0, 0.33);
-    background-image:
-    radial-gradient(at 89% 12%, hsla(268,100%,50%,1) 0px, transparent 50%),
-    radial-gradient(at 2% 91%, hsla(123,86%,62%,1) 0px, transparent 50%);
-    backdrop-filter: blur(7.2px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    border:1px solid #225;
-    align-items: left;
-    gap: 10px;
-
-    }
-.list{
-
+.card {
+  min-width: 600px;
+  max-width: 814px;
+  width: 714px;
+  min-height: 240px;
+  border-radius: 0.2rem;
+  background: rgba(0, 0, 0, 0.33);
+  background-image: radial-gradient(
+      at 12% 89%,
+      hsla(268, 100%, 50%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 91% 2%, hsla(123, 86%, 62%, 1) 0px, transparent 50%);
+  backdrop-filter: blur(7.2px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #225;
+  align-items: left;
+  gap: 10px;
 }
 
-    .title{
-        font-weight: bold;
-        font-size: 24px;
-        max-width: 100%;  
-        display: flex;
-        gap: 6px;
-        align-items:center;  
-    }
+.title {
+  font-weight: bold;
+  font-size: 24px;
+  max-width: 100%;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+h3 {
+  margin-top: 0;
+}
 
-    .description{
-        font-weight: 600;
-        font-size: 15px;
-        max-width: 100%;
-
-    }
+.description {
+  font-weight: 600;
+  font-size: 15px;
+  max-width: 100%;
+}
+.icons {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  bottom: 2rem;
+  right: 2rem;
+}

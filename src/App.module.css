@@ -1,75 +1,149 @@
-
-.first{
-    background-color: #222222;
-    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #222222 32px ), repeating-linear-gradient( #4500ff55, #4500ff );
-    min-height: 100vh;
-    min-width: calc(100vw - 15px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 82px;
+.first {
+  background-color: #222222;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #222222 32px
+    ),
+    repeating-linear-gradient(#4500ff55, #4500ff);
+  min-height: 100vh;
+  min-width: calc(100vw - 15px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 82px;
 }
 
-.title{
-    font-family: 'Inter', sans-serif;
-    max-width: 1300px;
-    font-size: 84px;
-    font-weight: 900;
-    margin: 0 0 0 180px ;
+.title {
+  font-family: "Inter", sans-serif;
+  max-width: 1300px;
+  font-size: 84px;
+  font-weight: 900;
+  margin: 0 0 0 180px;
 }
 
-.info{
-    display: flex;
-    margin: 0 0 0 100px ;
-    gap: 16px;
-    align-items: center;
-    min-width: 800px;
-    max-width: 814px;
+.info {
+  display: flex;
+  margin: 0 0 0 100px;
+  gap: 16px;
+  align-items: center;
+  min-width: 800px;
+  max-width: 814px;
 }
-.infocontent{
-    max-width: 760px;
-    font-size: 40px;
-    font-weight: 200;
-}
-
-.experiences{
-    background-color: #222222;
-    background-image:  radial-gradient(#4500ff 1.6px, transparent 1.6px), radial-gradient(#4500ff 1.6px, #222222 1.6px);
-    background-size: 64px 64px;
-    background-position: 0 0,32px 32px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 82px;
-}
-.experiencesContent{
-    margin-top: 12px;
-    display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content: space-evenly;
-    gap: 18px;
-}
-.experiencesTitle{
-    background-color: #222222;
-    font-size: 62px;
-    text-align: center;
-    font-weight: 900;
-}
-.experiencesSubtitle{
-    background-color: #222222;
-    font-size: 24px;
-    text-align:center;
-    min-width: 800px;
-    max-width: 814px;
+.infocontent {
+  max-width: 760px;
+  font-size: 40px;
+  font-weight: 200;
 }
 
-.cardContainer{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 32px;
-    flex-direction: row;
+.experiences {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 82px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 96px;
+}
+.sectionTitle {
+  font-size: 62px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.subtitle {
+  font-size: 24px;
+  text-align: center;
+  min-width: 800px;
+  max-width: 814px;
+}
+
+.cardContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 32px;
+  flex-direction: row;
+}
+
+.projects {
+  min-height: 100vh;
+  max-width: calc(100vw - 15px);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 82px;
+  height: 100%;
+}
+.container {
+  max-width: 90%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 50px; */
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  padding: 3rem;
+  min-width: 30%;
+  width: 50%;
+  gap: 32px;
+  align-items: left;
+}
+.projectTitle {
+  font-size: 24px;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  font-weight: 700;
+}
+
+.projectDescription {
+  max-width: 100%;
+  min-width: 80%;
+  font-size: 20px;
+  width: 100%;
+}
+.swiper {
+  min-width: 800px;
+  max-width: 800px;
+  height: 380px;
+}
+img {
+  border-radius: 14px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.link a {
+  color: #43d24a;
+  font-weigh: 500;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
