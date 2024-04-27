@@ -14,7 +14,11 @@
   justify-content: center;
   gap: 82px;
 }
-
+.first.white {
+  background-color: #c6c6c6;
+  color: #e6e6e6;
+  transition: background-color 0.5s ease-in-out;
+}
 .title {
   font-family: "Inter", sans-serif;
   max-width: 1300px;
@@ -27,6 +31,7 @@
   display: flex;
   margin: 0 0 0 100px;
   gap: 16px;
+  color: white;
   align-items: center;
   min-width: 800px;
   max-width: 814px;
@@ -82,6 +87,9 @@
   gap: 82px;
   height: 100%;
 }
+.projects.light {
+  color: #222;
+}
 .container {
   max-width: 90%;
   width: 90%;
@@ -119,8 +127,9 @@
   min-width: 800px;
   max-width: 800px;
   height: 380px;
+  border-radius: 14px;
 }
-img {
+.swiper img {
   border-radius: 14px;
 }
 

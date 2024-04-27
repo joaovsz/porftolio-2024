@@ -1,22 +1,22 @@
-.header{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: calc(100vw - 15px);
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: calc(100vw - 15px);
 }
 
-.header ul{
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 60px;
+.header ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 60px;
 }
-.header ul li a{
-    color: #fff;
-    font-size: 24px;
-    font-weight: medium;
+.header ul li a {
+  color: #fff;
+  font-size: 24px;
+  font-weight: medium;
 }
-.header .logo{
-    height: 62px;
+.header .logo {
+  height: 62px;
 }

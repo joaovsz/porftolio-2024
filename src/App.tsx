@@ -13,10 +13,13 @@ import github from "/home/joaovsz/Documentos/porftolio-2024/src/assets/projects/
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { Autoplay, EffectCards } from "swiper/modules";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { Experiences } from "./components/Sections/experiences/Experiences";
-import { MdTranslate } from "react-icons/md";
+import { MdTranslate } from "react-icons/md"; import "@theme-toggles/react/css/Within.css"
+import "@theme-toggles/react/css/Within.css"
+import { Within } from "@theme-toggles/react"
+
 interface Project {
   index: number;
   path: string;
@@ -26,6 +29,8 @@ interface Project {
 }
 function App() {
   const [activatedIndex, setActiveIndex] = useState(0)
+  const [isToggled, setToggle] = useState(true)
+
   const [language, setLanguage] = useState("pt-BR")
   const projects: Project[] = [{
     index: 0,
@@ -78,35 +83,98 @@ function App() {
   }
 
   ]
+  const projectsEN: Project[] = [{
+    index: 0,
+    path: quizNext,
+    title: "Questions and Answers Game",
+    description: "Application developed with Next.js and Typescript aiming to provide a simple quiz experience in the style of 'Who Wants to Be a Millionaire'.",
+    link: "https://quiz-next-lac.vercel.app/"
+  },
+  {
+    index: 1,
+    path: cartApp,
+    title: "E-commerce Shopping Cart",
+    description: "The Cart-App is an application developed with React aiming to demonstrate how a user interaction would be within a shopping website by adding chosen products to a cart.",
+    link: "https://cartapp-shoes.netlify.app/"
+  },
+  {
+    index: 2,
+    path: counterCalls,
+    title: "Call Counter | Tahto / Oi Tv Customer Service",
+    description: "The callRegister is a (public) work tool to assist in the daily control of calls received by the customer service agents of the Retention team for the Oi Tv service provided by the specialized customer service company Tahto - Site Goiânia.",
+    link: "https://callregister.netlify.app/"
+  },
+  {
+    index: 3,
+    path: devFinance,
+    title: "Financial Control",
+    description: "The devFinances aims to make monetary calculations in an intuitive way to help the user have control over income and expenses within a defined period of time. Developed with React + Typescript and Redux state management.",
+    link: "https://devfinances-jvsz.netlify.app/"
+  },
+  {
+    index: 4,
+    path: geraFilmes,
+    title: "Movie Generator",
+    description: "The movieFinder was developed to help users who have difficulty choosing a movie on their own. Thus, movieFinder solves this problem with a simple click! By clicking on 'Find Movie', the application searches the 'MovieDB' database through a public API to select the best movies for you.",
+    link: "https://finder-movi.netlify.app/"
+  },
+  {
+    index: 5,
+    path: simuladorDeRenda,
+    title: "Income Simulator - Tahto / Oi Tv Customer Service",
+    description: "The Income Simulator is a platform to facilitate the calculation of the commission amount earned by the agents of the Retention team for the Oi Tv service, based on the performance indicators of each employee. Independent and public project for the specialized customer service company Tahto - Site Goiânia.",
+    link: "https://simuladorrv.netlify.app/"
+  },
+  {
+    index: 6,
+    path: github,
+    title: "Github - User Search",
+    description: "The gitFinder is an application with the aim of finding users on the GitHub platform by consuming the API provided by the repository platform, showing basic information of the searched profile.",
+    link: "https://joaovsz.github.io/gitFinder/"
+  }
 
+  ]
 
+  useEffect(() => {
+    localStorage.setItem("language", language);
+  }, [language])
+  useEffect(() => {
+    !isToggled ? document.body.classList.add("light") : document.body.classList.remove("light");
+  }, [isToggled])
+
+  const handleTranslate = () => {
+    setLanguage(language === "pt-BR" ? "en-US" : "pt-BR");
+  };
   return (
     <>
-      <section id="home" className={styles.first}>
-        <MdTranslate size={40} style={{ position: "absolute", right: "2rem", top: "2rem", cursor: "pointer" }} />
-
-        <Header />
+      <span style={{ position: "fixed", zIndex: "999", display: "flex", flexDirection: "column", alignItems: "center", right: "2rem", top: "2rem", cursor: "pointer" }} >
+        <Within toggled={isToggled} toggle={setToggle} duration={750} style={{ fontSize: "30px", color: 'white' }} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
+        <MdTranslate size={30} onClick={handleTranslate} />
+      </span>
+      <section id="home" className={`${styles.first} ${isToggled ? '' : styles.white}`}>
+        <Header language={language} />
         <span className={styles.title}>
-          WELCOME, MY NAME IS JOÃO VITOR AND I’M A FULL STACK DEVELOPER
+          {language === "en-US" ? "WELCOME, MY NAME IS JOÃO VITOR AND I’M A FULL STACK DEVELOPER" : "BEM-VINDO, MEU NOME É JOÃO VITOR E EU SOU UM DESENVOLVEDOR FULL STACK"}
         </span>
         <span className={styles.info}>
           <IoPerson size={20} />
           <p className={styles.infocontent}>
-            Here you will see a little more about my
-            <b> professional</b> and <b>academic</b> life in the world of
-            technology!
+            {language === "en-US" ? "Here you will see a little more about my professional and academic life in the world of technology! "
+              : "Aqui você verá um pouco mais sobre minha vida profissional e acadêmica na área de tecnologia!"}
+
+
           </p>
         </span>
       </section>
-      <Experiences />
-      <section id="projects" className={styles.projects}>
+      <Experiences language={language} setToggle={setToggle} isToggled={isToggled} />
+      <section id="projects" className={`${styles.projects} ${isToggled ? '' : styles.light}`}>
         <div className={styles.content}>
           <span className={styles.flexRow}>
             <span className={styles.sectionTitle}>
-              PROJECTS
+              {language === "en-US" ? "PROJECTS" : "PROJETOS"}
             </span>
             <span className={styles.subtitle}>
-              Explore my featured projects in this section.
+              {language === "en-US" ? "Explore my featured projects in this section." : "Explore meus projetos em destaque nesta seção."}
             </span>
           </span>
 
@@ -114,13 +182,13 @@ function App() {
 
             <div className={styles.projectInfo}>
               <span className={styles.projectTitle}>
-                {projects[activatedIndex].title}
+                {language === "en-US" ? projectsEN[activatedIndex].title : projects[activatedIndex].title}
               </span>
               <span className={styles.projectDescription}>
-                {projects[activatedIndex].description}
+                {language === "en-US" ? projectsEN[activatedIndex].description : projects[activatedIndex].description}
               </span>
               <span className={styles.link}>
-                <a target="_blank" href={projects[activatedIndex].link}>Acessar Projeto <FiExternalLink size={20} /></a>
+                <a target="_blank" href={language === "en-US" ? projectsEN[activatedIndex].link : projects[activatedIndex].link}>{language === "en-US" ? "Access Project" : "Acessar Projeto"} <FiExternalLink size={20} /></a>
               </span>
             </div>
             <Swiper
