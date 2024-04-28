@@ -12,7 +12,7 @@ import github from "./assets/projects/github.png";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-import { Autoplay, EffectCards } from "swiper/modules";
+import { Autoplay, EffectCards, Navigation, Pagination } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { Experiences } from "./components/Sections/experiences/Experiences";
@@ -30,6 +30,8 @@ interface Project {
 function App() {
   const [activatedIndex, setActiveIndex] = useState(0)
   const [isToggled, setToggle] = useState(true)
+  const [largura, setLargura] = useState(window.innerWidth);
+
 
   const [language, setLanguage] = useState("pt-BR")
   const projects: Project[] = [{
@@ -134,6 +136,17 @@ function App() {
   }
 
   ]
+  useEffect(() => {
+    const handleResize = () => {
+      setLargura(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [])
 
   useEffect(() => {
     localStorage.setItem("language", language);
@@ -147,11 +160,15 @@ function App() {
   };
   return (
     <>
-      <span style={{ color: isToggled ? "white" : "black", position: "fixed", zIndex: "999", display: "flex", flexDirection: "column", alignItems: "center", right: "2rem", top: "2rem", cursor: "pointer" }} >
+      <span style={{ display: largura <= 425 ? "none" : "flex", color: isToggled ? "white" : "black", position: largura <= 425 ? "absolute" : "fixed", zIndex: "999", flexDirection: largura <= 425 ? "row" : "column", alignItems: "center", right: largura <= 425 ? "40%" : "1rem", top: largura <= 425 ? "1rem" : "2rem", cursor: "pointer" }} >
         <Within toggled={isToggled} toggle={setToggle} duration={750} style={{ fontSize: "30px", color: isToggled ? "white" : "black" }} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
         <MdTranslate size={30} onClick={handleTranslate} />
       </span>
       <section id="home" className={`${styles.first} ${isToggled ? '' : styles.white}`}>
+        <span style={{ width: "50%", justifyContent: "center", margin: "0 auto", display: largura <= 425 ? "flex" : "none", color: isToggled ? "white" : "black", zIndex: "999", flexDirection: "row", alignItems: "center", cursor: "pointer" }} >
+          <Within toggled={isToggled} toggle={setToggle} duration={750} style={{ fontSize: "30px", color: isToggled ? "white" : "black" }} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
+          <MdTranslate size={30} onClick={handleTranslate} />
+        </span>
         <Header language={language} />
         <span className={styles.title}>
           {language === "en-US" ? "WELCOME, MY NAME IS JOÃO VITOR AND I’M A FULL STACK DEVELOPER" : "BEM-VINDO, MEU NOME É JOÃO VITOR E EU SOU UM DESENVOLVEDOR FULL STACK"}
@@ -193,11 +210,13 @@ function App() {
             </div>
             <Swiper
               effect={'cards'}
+              direction={'horizontal'}
               autoplay={{
-                delay: 3000,
-                disableOnInteraction: true,
-              }}
-              modules={[EffectCards, Autoplay]}
+                delay: 4000,
+                disableOnInteraction: false,
+              }} pagination={true}
+              navigation={true}
+              modules={[largura <= 425 ? Pagination : EffectCards, Navigation, Autoplay]}
               onTransitionEnd={(e) => {
                 setActiveIndex(e.activeIndex);
               }}
@@ -206,7 +225,7 @@ function App() {
             >
               {projects.map((project) => (
                 <SwiperSlide itemID={project.title} key={project.index}>
-                  <img src={project.path} width={800} />
+                  <img src={project.path} width={'800'} />
                 </SwiperSlide>
               ))}
             </Swiper>

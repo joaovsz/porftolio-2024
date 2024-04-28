@@ -110,7 +110,7 @@ export const Experiences = ({ isToggled, language }: Props) => {
                     title={language === "pt-BR" ? "Desenvolvedor React | Flowon Lab. - Emprego Remoto Atual" : "React Developer | Flowon Lab. - 2024 -  Actual job"}
                 />
             </div>
-            <div className={styles.cardContainer}>
+            <div className={styles.cardContainer} style={{ flexDirection: 'column', justifyContent: "flex-start", alignItems: 'flex-start', gap: '12px' }}>
                 <div className={styles.titleSkillsContainer}>
                     <MdRocketLaunch size={25} />   <h2>
                         {language === "pt-BR" ? "Linguagens e Hard Skills" : 'Programming Languages / Hard Skills'}</h2>
