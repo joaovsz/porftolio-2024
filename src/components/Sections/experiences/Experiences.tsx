@@ -117,7 +117,7 @@ export const Experiences = ({ isToggled, language }: Props) => {
                 </div>
                 <div className={styles.cardContainer}>
                     <div className={`${styles.cardSkill} ${isToggled ? '' : styles.light}`}>
-                        <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>+3 anos de experiência</p>
+                        <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>{language === "en-US" ? "3 years of experience" : '+3 anos de experiência'}</p>
 
                         <h4 className={styles.titleSkill}>
                             Proficiência Avançada com capacidade de ensinar:
@@ -155,7 +155,7 @@ export const Experiences = ({ isToggled, language }: Props) => {
                         </div>
                     </div>
                     <div className={`${styles.cardSkill} ${isToggled ? '' : styles.light}`}>
-                        <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>+1 ano de experiência</p>
+                        <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>{language === "en-US" ? "1 year of experience" : '1 ano de experiência'}</p>
                         <h4 className={styles.titleSkill}>
                             Proficiência Média e com interesse de aprendizado:
                         </h4>

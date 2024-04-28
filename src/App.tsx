@@ -147,8 +147,8 @@ function App() {
   };
   return (
     <>
-      <span style={{ position: "fixed", zIndex: "999", display: "flex", flexDirection: "column", alignItems: "center", right: "2rem", top: "2rem", cursor: "pointer" }} >
-        <Within toggled={isToggled} toggle={setToggle} duration={750} style={{ fontSize: "30px", color: 'white' }} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
+      <span style={{ color: isToggled ? "white" : "black", position: "fixed", zIndex: "999", display: "flex", flexDirection: "column", alignItems: "center", right: "2rem", top: "2rem", cursor: "pointer" }} >
+        <Within toggled={isToggled} toggle={setToggle} duration={750} style={{ fontSize: "30px", color: isToggled ? "white" : "black" }} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
         <MdTranslate size={30} onClick={handleTranslate} />
       </span>
       <section id="home" className={`${styles.first} ${isToggled ? '' : styles.white}`}>
