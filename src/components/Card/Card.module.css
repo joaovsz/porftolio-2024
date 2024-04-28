@@ -1,9 +1,10 @@
 .card {
   color: white;
-  min-width: 600px;
-  max-width: 814px;
-  width: 714px;
+  min-width: 400px;
+  max-width: 100%;
+  width: 100%;
   min-height: 240px;
+  height: 320px;
   border-radius: 0.2rem;
   background: rgba(0, 0, 0, 0.33);
   background-image: radial-gradient(
@@ -30,6 +31,7 @@
   gap: 6px;
   align-items: center;
 }
+
 h3 {
   margin-top: 0;
 }
@@ -44,6 +46,26 @@ h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  bottom: 2rem;
+  bottom: 1rem;
   right: 2rem;
+}
+@media screen and (max-width: 425px) {
+  .card {
+    min-width: 250px;
+    width: 250px;
+    max-width: 250px;
+    margin: 0 2rem;
+    padding: 1rem;
+    height: 400px;
+  }
+  .card .title {
+    font-size: 20px;
+  }
+  .description {
+    font-size: 13px;
+  }
+  .icons {
+    bottom: 1rem;
+    left: 3.3rem;
+  }
 }

@@ -110,17 +110,18 @@ export const Experiences = ({ isToggled, language }: Props) => {
                     title={language === "pt-BR" ? "Desenvolvedor React | Flowon Lab. - Emprego Remoto Atual" : "React Developer | Flowon Lab. - 2024 -  Actual job"}
                 />
             </div>
-            <div>
+            <div className={styles.cardContainer}>
                 <div className={styles.titleSkillsContainer}>
                     <MdRocketLaunch size={25} />   <h2>
                         {language === "pt-BR" ? "Linguagens e Hard Skills" : 'Programming Languages / Hard Skills'}</h2>
                 </div>
                 <div className={styles.cardContainer}>
                     <div className={`${styles.cardSkill} ${isToggled ? '' : styles.light}`}>
-                        <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>{language === "en-US" ? "3 years of experience" : '+3 anos de experiência'}</p>
 
                         <h4 className={styles.titleSkill}>
                             Proficiência Avançada com capacidade de ensinar:
+                            <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>{language === "en-US" ? "3 years of experience" : '+3 anos de experiência'}</p>
+
                         </h4>
                         <div className={styles.chipsContainer}>
                             <div className={styles.cardChip}>
@@ -155,9 +156,10 @@ export const Experiences = ({ isToggled, language }: Props) => {
                         </div>
                     </div>
                     <div className={`${styles.cardSkill} ${isToggled ? '' : styles.light}`}>
-                        <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>{language === "en-US" ? "1 year of experience" : '1 ano de experiência'}</p>
                         <h4 className={styles.titleSkill}>
                             Proficiência Média e com interesse de aprendizado:
+                            <p className={`${styles.info} ${isToggled ? '' : styles.light}`}>{language === "en-US" ? "1 year of experience" : '1 ano de experiência'}</p>
+
                         </h4>
                         <div className={styles.chipsContainer}>
                             <div className={styles.cardChip}>
@@ -188,8 +190,8 @@ export const Experiences = ({ isToggled, language }: Props) => {
             </div>
             <div style={{ flexDirection: 'column', justifyContent: "flex-start", alignItems: 'flex-start', gap: '12px' }} className={styles.cardContainer}>
                 <div className={styles.titleSkillsContainer}>
-                    <PiStudentBold size={25} />   <h2>
-                        {language === "en-US" ? 'Education' : 'Formação'}</h2>
+                    <PiStudentBold size={25} />
+                    <h2>                        {language === "en-US" ? 'Education' : 'Formação'}</h2>
                 </div>
                 <div className={`${styles.cardSkill} ${isToggled ? '' : styles.light}`}>
                     <h4 className={styles.titleSkill}>{language === "en-US" ? "Software Engineering - Instituto Infnet" : 'Engenharia de Sofware - Instituto Infnet'}</h4>

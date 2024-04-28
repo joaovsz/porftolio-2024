@@ -19,12 +19,13 @@
   color: #e6e6e6;
   transition: background-color 0.5s ease-in-out;
 }
+
 .title {
   font-family: "Inter", sans-serif;
   max-width: 1300px;
   font-size: 84px;
   font-weight: 900;
-  margin: 0 0 0 180px;
+  margin: 0 100px;
 }
 
 .info {
@@ -67,15 +68,6 @@
   text-align: center;
   min-width: 800px;
   max-width: 814px;
-}
-
-.cardContainer {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 32px;
-  flex-direction: row;
 }
 
 .projects {
@@ -124,12 +116,9 @@
   width: 100%;
 }
 .swiper {
-  min-width: 800px;
+  width: 800px;
   max-width: 800px;
   height: 380px;
-  border-radius: 14px;
-}
-.swiper img {
   border-radius: 14px;
 }
 
@@ -155,4 +144,61 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    overflow-x: hidden;
+  }
+  .first {
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+  }
+  .first .title {
+    font-size: 28px;
+    max-width: 260px;
+    min-width: 260px;
+    margin: 0 auto;
+  }
+  .first .info {
+    display: flex;
+    margin: 0 auto;
+    gap: 12px;
+    color: white;
+    align-items: center;
+    min-width: 300px;
+    width: 80%;
+    flex-direction: column;
+  }
+  .first .info .infocontent {
+    margin: 0;
+    font-size: 24px;
+  }
+  .sectionTitle {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 12px;
+    width: 90%;
+  }
+  .swiper {
+    min-width: 280px;
+    max-width: 280px;
+    width: 280px;
+    margin: auto;
+    background-position: center;
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .projects .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .projectInfo {
+    min-width: 80%;
+  }
 }

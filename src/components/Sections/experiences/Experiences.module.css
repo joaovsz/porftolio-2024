@@ -1,6 +1,5 @@
 .experiences {
   min-height: 800px;
-  height: 135vh;
   padding-top: 96px;
   display: flex;
   width: 80%;
@@ -8,6 +7,7 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 82px;
+  padding-bottom: 96px;
 }
 .experiences.light {
   color: #222;
@@ -55,9 +55,8 @@
 .cardSkill {
   display: flex;
   min-height: 70px;
-
-  min-width: 500px;
-  max-width: 800px;
+  min-width: 280px;
+  width: 100%;
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
@@ -72,13 +71,13 @@
 .cardSkill.light {
   background: rgba(255, 255, 255, 0.21);
 }
+
 .info {
   color: #43d24a;
   margin: 0;
-  position: absolute;
-  right: 1rem;
   font-size: 13px;
   font-weight: 400;
+  text-decoration: none;
 }
 .info.light {
   color: red;
@@ -86,15 +85,16 @@
 }
 .cardSkill h4 {
   margin: 0;
-  text-decoration: underline;
 }
 .cardSkill p {
   margin: 5px;
 }
 .chipsContainer {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 12px;
 }
 .cardChip {
   padding: 0.5rem;
@@ -109,4 +109,60 @@
 .chipText {
   font-size: 12px;
   font-weight: bold;
+}
+@media screen and (max-width: 425px) {
+  .experiences {
+    width: 400px;
+    max-width: 320px;
+    gap: 36px;
+  }
+  .sectionTitle {
+    max-width: 420px;
+    margin: 0 10px;
+    font-size: 22px;
+  }
+  .subtitle {
+    font-size: 16px;
+    text-align: center;
+    min-width: 320px;
+    max-width: 380px;
+  }
+  .titleSkillsContainer {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    gap: 10px;
+  }
+  .titleSkillsContainer h2 {
+    font-size: 18px;
+  }
+  .cardContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 32px;
+    flex-direction: column;
+  }
+
+  .containerForMobile {
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .cardSkill {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .chipsContainer {
+    flex-wrap: wrap;
+  }
+  .info {
+    bottom: 0.3rem;
+  }
 }
